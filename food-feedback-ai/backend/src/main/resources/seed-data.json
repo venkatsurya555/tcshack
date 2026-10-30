@@ -1,0 +1,1506 @@
+{
+  "restaurant_branches": [
+    {
+      "id": 1,
+      "name": "The Royal Rasoi - Indiranagar",
+      "code": "BLR-IND-01",
+      "address": "100 Feet Road, HAL 2nd Stage, Indiranagar",
+      "city": "Bengaluru",
+      "phone": "+91 80 4123 4567",
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.298977"
+    },
+    {
+      "id": 2,
+      "name": "The Royal Rasoi - Koramangala",
+      "code": "BLR-KOR-02",
+      "address": "80 Feet Road, 4th Block, Koramangala",
+      "city": "Bengaluru",
+      "phone": "+91 80 4234 5678",
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.298985"
+    },
+    {
+      "id": 3,
+      "name": "The Royal Rasoi - Whitefield",
+      "code": "BLR-WHI-03",
+      "address": "ITPB Main Road, Whitefield",
+      "city": "Bengaluru",
+      "phone": "+91 80 4345 6789",
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.298989"
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "code": "kitchen",
+      "name": "Kitchen & Culinary",
+      "description": "Food prep, taste, temperature, recipe standards",
+      "sla_hours": 2,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310336"
+    },
+    {
+      "id": 2,
+      "code": "service",
+      "name": "Service & Hospitality",
+      "description": "Wait staff behaviour, table service, dining ambiance",
+      "sla_hours": 2,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310346"
+    },
+    {
+      "id": 3,
+      "code": "billing",
+      "name": "Billing & Cashier",
+      "description": "Bill discrepancies, discounts, payment gateway errors",
+      "sla_hours": 2,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310352"
+    },
+    {
+      "id": 4,
+      "code": "packing",
+      "name": "Packaging & Dispatch",
+      "description": "Container leakage, food safety seals, cutlery packing",
+      "sla_hours": 4,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310358"
+    },
+    {
+      "id": 5,
+      "code": "delivery",
+      "name": "Delivery Operations",
+      "description": "Rider transit delay, temperature loss in transit, delivery damage",
+      "sla_hours": 2,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310364"
+    },
+    {
+      "id": 6,
+      "code": "management",
+      "name": "Executive Management",
+      "description": "Escalated concerns, customer retention, policy decisions",
+      "sla_hours": 4,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.310369"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Aravind Balakrishnan",
+      "phone": "9845123456",
+      "email": "aravind.b@example.com",
+      "created_at": "2026-10-29 09:24:43.408789"
+    },
+    {
+      "id": 2,
+      "name": "Sneha Rao",
+      "phone": "9731234567",
+      "email": "sneha.rao@example.com",
+      "created_at": "2026-10-29 09:24:43.408795"
+    },
+    {
+      "id": 3,
+      "name": "Vikramaditya Hegde",
+      "phone": "9980123456",
+      "email": "vikram.h@example.com",
+      "created_at": "2026-10-29 09:24:43.408799"
+    },
+    {
+      "id": 4,
+      "name": "Divya Subramanian",
+      "phone": "9886234567",
+      "email": "divya.s@example.com",
+      "created_at": "2026-10-29 09:24:43.408802"
+    },
+    {
+      "id": 5,
+      "name": "Rohan Kulkarni",
+      "phone": "9611234567",
+      "email": "rohan.k@example.com",
+      "created_at": "2026-10-29 09:24:43.408805"
+    }
+  ],
+  "application_settings": [
+    {
+      "id": 1,
+      "key": "restaurant_name",
+      "value": "The Royal Rasoi",
+      "description": "Primary restaurant brand name",
+      "updated_at": "2026-10-29 09:24:43.386881"
+    },
+    {
+      "id": 2,
+      "key": "qr_expiry_hours",
+      "value": "48",
+      "description": "Hours before a bill QR expires",
+      "updated_at": "2026-10-29 09:24:43.386888"
+    },
+    {
+      "id": 3,
+      "key": "auto_complaint_threshold",
+      "value": "2",
+      "description": "Ratings at or below this trigger complaint tickets",
+      "updated_at": "2026-10-29 09:24:43.386891"
+    },
+    {
+      "id": 4,
+      "key": "require_manager_verification",
+      "value": "true",
+      "description": "Mandatory manager verification before closing complaints",
+      "updated_at": "2026-10-29 09:24:43.386894"
+    },
+    {
+      "id": 5,
+      "key": "in_app_notifications_enabled",
+      "value": "true",
+      "description": "Enable in-app guest notifications",
+      "updated_at": "2026-10-29 09:24:43.386897"
+    },
+    {
+      "id": 6,
+      "key": "sms_notification_adapter",
+      "value": "Mock_Twilio_India",
+      "description": "Active SMS gateway adapter",
+      "updated_at": "2026-10-29 09:24:43.386900"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Rajesh Sharma (Super Admin)",
+      "role": "super_admin",
+      "department_id": null,
+      "branch_id": null,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363816"
+    },
+    {
+      "id": 2,
+      "username": "manager",
+      "email": "manager@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Kavita Nair (Branch Manager)",
+      "role": "restaurant_manager",
+      "department_id": null,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363825"
+    },
+    {
+      "id": 3,
+      "username": "chef_suresh",
+      "email": "chef@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Chef Suresh Rao",
+      "role": "department_staff",
+      "department_id": 1,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363830"
+    },
+    {
+      "id": 4,
+      "username": "service_priya",
+      "email": "priya@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Priya Menon",
+      "role": "department_staff",
+      "department_id": 2,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363833"
+    },
+    {
+      "id": 5,
+      "username": "billing_rahul",
+      "email": "rahul@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Rahul Verma",
+      "role": "department_staff",
+      "department_id": 3,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363836"
+    },
+    {
+      "id": 6,
+      "username": "packing_anita",
+      "email": "anita@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Anita Deshmukh",
+      "role": "department_staff",
+      "department_id": 4,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363839"
+    },
+    {
+      "id": 7,
+      "username": "delivery_kiran",
+      "email": "kiran@royalrasoi.demo",
+      "hashed_password": "9fbb863d0ce978de48cd86f2ccc9483c7b4770bf5ff67bd8cf827db3c68ff1d6",
+      "full_name": "Kiran Kumar",
+      "role": "department_staff",
+      "department_id": 5,
+      "branch_id": 1,
+      "phone": null,
+      "is_active": 1,
+      "created_at": "2026-10-29 09:24:43.363842"
+    }
+  ],
+  "menu_items": [
+    {
+      "id": 1,
+      "branch_id": 1,
+      "name": "Dum Handi Chicken Biryani",
+      "category": "Biryani",
+      "description": "Fragrant basmati rice slow-cooked with tender spiced chicken",
+      "price": 380.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399225"
+    },
+    {
+      "id": 2,
+      "branch_id": 1,
+      "name": "Paneer Tikka Angara",
+      "category": "Starters",
+      "description": "Char-grilled cottage cheese marinated in roasted spices",
+      "price": 290.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399232"
+    },
+    {
+      "id": 3,
+      "branch_id": 1,
+      "name": "Murgh Ghee Roast",
+      "category": "Starters",
+      "description": "Mangalorean style fiery ghee roasted chicken skewers",
+      "price": 360.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399235"
+    },
+    {
+      "id": 4,
+      "branch_id": 1,
+      "name": "Dal Makhani Royale",
+      "category": "Main Course",
+      "description": "Slow simmered black lentils finished with fresh cream and butter",
+      "price": 260.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399241"
+    },
+    {
+      "id": 5,
+      "branch_id": 1,
+      "name": "Butter Chicken Delhi 6",
+      "category": "Main Course",
+      "description": "Tandoori chicken in a silky, rich tomato and butter sauce",
+      "price": 395.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399245"
+    },
+    {
+      "id": 6,
+      "branch_id": 1,
+      "name": "Butter Garlic Naan",
+      "category": "Breads",
+      "description": "Clay oven baked bread brushed with roasted garlic butter",
+      "price": 75.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399248"
+    },
+    {
+      "id": 7,
+      "branch_id": 1,
+      "name": "Shahi Gulab Jamun",
+      "category": "Desserts",
+      "description": "Khoya dumplings soaked in saffron-rose syrup",
+      "price": 140.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399253"
+    },
+    {
+      "id": 8,
+      "branch_id": 1,
+      "name": "Alphonso Mango Lassi",
+      "category": "Beverages",
+      "description": "Creamy chilled yogurt blended with sweet Ratnagiri mango pulp",
+      "price": 120.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399256"
+    },
+    {
+      "id": 9,
+      "branch_id": 1,
+      "name": "Crispy Corn Pepper Salt",
+      "category": "Starters",
+      "description": "Tossed sweet corn with cracked pepper and scallions",
+      "price": 240.0,
+      "is_available": 1,
+      "image_url": null,
+      "created_at": "2026-10-29 09:24:43.399259"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "order_number": "ORD-2026-101",
+      "branch_id": 1,
+      "customer_id": 1,
+      "customer_name": "Aravind Balakrishnan",
+      "customer_phone": "9845123456",
+      "customer_email": "aravind.b@example.com",
+      "table_number": "T-04",
+      "order_channel": "Dine-in",
+      "bill_total": 1140.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-28 07:24:43.296924"
+    },
+    {
+      "id": 2,
+      "order_number": "ORD-2026-102",
+      "branch_id": 1,
+      "customer_id": 2,
+      "customer_name": "Sneha Rao",
+      "customer_phone": "9731234567",
+      "customer_email": "sneha.rao@example.com",
+      "table_number": "T-12",
+      "order_channel": "Dine-in",
+      "bill_total": 880.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-28 15:24:43.296924"
+    },
+    {
+      "id": 3,
+      "order_number": "ORD-2026-103",
+      "branch_id": 1,
+      "customer_id": 3,
+      "customer_name": "Vikramaditya Hegde",
+      "customer_phone": "9980123456",
+      "customer_email": "vikram.h@example.com",
+      "table_number": "T-07",
+      "order_channel": "Dine-in",
+      "bill_total": 800.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-28 21:24:43.296924"
+    },
+    {
+      "id": 4,
+      "order_number": "ORD-2026-104",
+      "branch_id": 1,
+      "customer_id": 4,
+      "customer_name": "Divya Subramanian",
+      "customer_phone": "9886234567",
+      "customer_email": "divya.s@example.com",
+      "table_number": "T-15",
+      "order_channel": "Dine-in",
+      "bill_total": 920.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-29 05:24:43.296924"
+    },
+    {
+      "id": 5,
+      "order_number": "ORD-2026-105",
+      "branch_id": 1,
+      "customer_id": 5,
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_email": "rohan.k@example.com",
+      "table_number": "T-09",
+      "order_channel": "Dine-in",
+      "bill_total": 1305.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-29 08:24:43.296924"
+    },
+    {
+      "id": 6,
+      "order_number": "ORD-2026-106",
+      "branch_id": 1,
+      "customer_id": null,
+      "customer_name": "Live Guest Tester",
+      "customer_phone": "9944112233",
+      "customer_email": null,
+      "table_number": "T-08",
+      "order_channel": "Dine-in",
+      "bill_total": 820.0,
+      "status": "Completed",
+      "feedback_submitted": 1,
+      "created_at": "2026-10-29 09:47:02.728499"
+    }
+  ],
+  "routing_rules": [
+    {
+      "id": 1,
+      "issue_category": "Food Quality",
+      "department_id": 1,
+      "default_priority": "High",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "issue_category": "Food Temperature",
+      "department_id": 1,
+      "default_priority": "High",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "issue_category": "Taste and Freshness",
+      "department_id": 1,
+      "default_priority": "Medium",
+      "sla_hours": 4,
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "issue_category": "Portion Size",
+      "department_id": 1,
+      "default_priority": "Low",
+      "sla_hours": 6,
+      "is_active": 1
+    },
+    {
+      "id": 5,
+      "issue_category": "Missing or Incorrect Item",
+      "department_id": 1,
+      "default_priority": "Critical",
+      "sla_hours": 1,
+      "is_active": 1
+    },
+    {
+      "id": 6,
+      "issue_category": "Packaging",
+      "department_id": 4,
+      "default_priority": "Medium",
+      "sla_hours": 4,
+      "is_active": 1
+    },
+    {
+      "id": 7,
+      "issue_category": "Staff Behaviour",
+      "department_id": 2,
+      "default_priority": "Critical",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 8,
+      "issue_category": "Service Delay",
+      "department_id": 2,
+      "default_priority": "High",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 9,
+      "issue_category": "Billing and Payment",
+      "department_id": 3,
+      "default_priority": "High",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 10,
+      "issue_category": "Delivery",
+      "department_id": 5,
+      "default_priority": "High",
+      "sla_hours": 2,
+      "is_active": 1
+    },
+    {
+      "id": 11,
+      "issue_category": "Other",
+      "department_id": 6,
+      "default_priority": "Medium",
+      "sla_hours": 4,
+      "is_active": 1
+    }
+  ],
+  "order_items": [
+    {
+      "id": 1,
+      "order_id": 1,
+      "menu_item_id": 1,
+      "item_name": "Dum Handi Chicken Biryani",
+      "quantity": 2,
+      "price_each": 380.0,
+      "subtotal": 760.0
+    },
+    {
+      "id": 2,
+      "order_id": 1,
+      "menu_item_id": 8,
+      "item_name": "Alphonso Mango Lassi",
+      "quantity": 2,
+      "price_each": 120.0,
+      "subtotal": 240.0
+    },
+    {
+      "id": 3,
+      "order_id": 1,
+      "menu_item_id": 7,
+      "item_name": "Shahi Gulab Jamun",
+      "quantity": 1,
+      "price_each": 140.0,
+      "subtotal": 140.0
+    },
+    {
+      "id": 4,
+      "order_id": 2,
+      "menu_item_id": 5,
+      "item_name": "Butter Chicken Delhi 6",
+      "quantity": 1,
+      "price_each": 395.0,
+      "subtotal": 395.0
+    },
+    {
+      "id": 5,
+      "order_id": 2,
+      "menu_item_id": 6,
+      "item_name": "Butter Garlic Naan",
+      "quantity": 3,
+      "price_each": 75.0,
+      "subtotal": 225.0
+    },
+    {
+      "id": 6,
+      "order_id": 2,
+      "menu_item_id": 4,
+      "item_name": "Dal Makhani Royale",
+      "quantity": 1,
+      "price_each": 260.0,
+      "subtotal": 260.0
+    },
+    {
+      "id": 7,
+      "order_id": 3,
+      "menu_item_id": 2,
+      "item_name": "Paneer Tikka Angara",
+      "quantity": 1,
+      "price_each": 290.0,
+      "subtotal": 290.0
+    },
+    {
+      "id": 8,
+      "order_id": 3,
+      "menu_item_id": 3,
+      "item_name": "Murgh Ghee Roast",
+      "quantity": 1,
+      "price_each": 360.0,
+      "subtotal": 360.0
+    },
+    {
+      "id": 9,
+      "order_id": 3,
+      "menu_item_id": 6,
+      "item_name": "Butter Garlic Naan",
+      "quantity": 2,
+      "price_each": 75.0,
+      "subtotal": 150.0
+    },
+    {
+      "id": 10,
+      "order_id": 4,
+      "menu_item_id": 1,
+      "item_name": "Dum Handi Chicken Biryani",
+      "quantity": 1,
+      "price_each": 380.0,
+      "subtotal": 380.0
+    },
+    {
+      "id": 11,
+      "order_id": 4,
+      "menu_item_id": 4,
+      "item_name": "Dal Makhani Royale",
+      "quantity": 1,
+      "price_each": 260.0,
+      "subtotal": 260.0
+    },
+    {
+      "id": 12,
+      "order_id": 4,
+      "menu_item_id": 7,
+      "item_name": "Shahi Gulab Jamun",
+      "quantity": 2,
+      "price_each": 140.0,
+      "subtotal": 280.0
+    },
+    {
+      "id": 13,
+      "order_id": 5,
+      "menu_item_id": 1,
+      "item_name": "Dum Handi Chicken Biryani",
+      "quantity": 1,
+      "price_each": 380.0,
+      "subtotal": 380.0
+    },
+    {
+      "id": 14,
+      "order_id": 5,
+      "menu_item_id": 2,
+      "item_name": "Paneer Tikka Angara",
+      "quantity": 1,
+      "price_each": 290.0,
+      "subtotal": 290.0
+    },
+    {
+      "id": 15,
+      "order_id": 5,
+      "menu_item_id": 5,
+      "item_name": "Butter Chicken Delhi 6",
+      "quantity": 1,
+      "price_each": 395.0,
+      "subtotal": 395.0
+    },
+    {
+      "id": 16,
+      "order_id": 5,
+      "menu_item_id": 8,
+      "item_name": "Alphonso Mango Lassi",
+      "quantity": 2,
+      "price_each": 120.0,
+      "subtotal": 240.0
+    },
+    {
+      "id": 17,
+      "order_id": 6,
+      "menu_item_id": 1,
+      "item_name": "Dum Handi Chicken Biryani",
+      "quantity": 1,
+      "price_each": 380.0,
+      "subtotal": 380.0
+    },
+    {
+      "id": 18,
+      "order_id": 6,
+      "menu_item_id": 2,
+      "item_name": "Paneer Tikka Angara",
+      "quantity": 1,
+      "price_each": 290.0,
+      "subtotal": 290.0
+    },
+    {
+      "id": 19,
+      "order_id": 6,
+      "menu_item_id": 3,
+      "item_name": "Murgh Ghee Roast",
+      "quantity": 1,
+      "price_each": 360.0,
+      "subtotal": 360.0
+    }
+  ],
+  "qr_tokens": [
+    {
+      "id": 1,
+      "token": "demo-token-1-ord-2026-101",
+      "order_id": 1,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:24:43.296924",
+      "used_at": "2026-10-28 08:24:43.296924",
+      "created_at": "2026-10-28 07:24:43.296924"
+    },
+    {
+      "id": 2,
+      "token": "demo-token-2-ord-2026-102",
+      "order_id": 2,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:24:43.296924",
+      "used_at": "2026-10-28 16:24:43.296924",
+      "created_at": "2026-10-28 15:24:43.296924"
+    },
+    {
+      "id": 3,
+      "token": "demo-token-3-ord-2026-103",
+      "order_id": 3,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:24:43.296924",
+      "used_at": "2026-10-28 22:24:43.296924",
+      "created_at": "2026-10-28 21:24:43.296924"
+    },
+    {
+      "id": 4,
+      "token": "demo-token-4-ord-2026-104",
+      "order_id": 4,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:24:43.296924",
+      "used_at": "2026-10-29 06:24:43.296924",
+      "created_at": "2026-10-29 05:24:43.296924"
+    },
+    {
+      "id": 5,
+      "token": "demo-token-5-ord-2026-105",
+      "order_id": 5,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:24:43.296924",
+      "used_at": "2026-10-29 09:24:43.935134",
+      "created_at": "2026-10-29 08:24:43.296924"
+    },
+    {
+      "id": 6,
+      "token": "8O7TzZqbC636Y1rrbbMKR4xDAhZfx06x",
+      "order_id": 6,
+      "branch_id": 1,
+      "status": "used",
+      "expires_at": "2026-10-31 09:47:02.757739",
+      "used_at": "2026-10-29 09:48:35.787035",
+      "created_at": "2026-10-29 09:47:02.757739"
+    }
+  ],
+  "feedback_submissions": [
+    {
+      "id": 1,
+      "feedback_number": "FB-2026-001",
+      "order_id": 1,
+      "branch_id": 1,
+      "customer_name": "Aravind Balakrishnan",
+      "customer_phone": "9845123456",
+      "customer_email": "aravind.b@example.com",
+      "overall_rating": 4.7,
+      "general_comment": "Wonderful experience! Dum biryani was aromatic and dessert was fresh.",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-28 08:09:43.296924"
+    },
+    {
+      "id": 2,
+      "feedback_number": "FB-2026-002",
+      "order_id": 2,
+      "branch_id": 1,
+      "customer_name": "Sneha Rao",
+      "customer_phone": "9731234567",
+      "customer_email": "sneha.rao@example.com",
+      "overall_rating": 2.3,
+      "general_comment": "Butter chicken was lukewarm when served. Naan was also cold.",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-28 16:14:43.296924"
+    },
+    {
+      "id": 3,
+      "feedback_number": "FB-2026-003",
+      "order_id": 3,
+      "branch_id": 1,
+      "customer_name": "Vikramaditya Hegde",
+      "customer_phone": "9980123456",
+      "customer_email": "vikram.h@example.com",
+      "overall_rating": 2.0,
+      "general_comment": "Starter took over 40 minutes to arrive. Waiter was inattentive.",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-28 22:04:43.296924"
+    },
+    {
+      "id": 4,
+      "feedback_number": "FB-2026-004",
+      "order_id": 4,
+      "branch_id": 1,
+      "customer_name": "Divya Subramanian",
+      "customer_phone": "9886234567",
+      "customer_email": "divya.s@example.com",
+      "overall_rating": 1.7,
+      "general_comment": "Gulab jamun was missing from our takeaway bag, and the Dal was too salty.",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-29 05:54:43.296924"
+    },
+    {
+      "id": 5,
+      "feedback_number": "FB-2026-005",
+      "order_id": 5,
+      "branch_id": 1,
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_email": "rohan.k@example.com",
+      "overall_rating": 1.0,
+      "general_comment": "Chicken was undercooked in the center.",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-29 09:24:43.935134"
+    },
+    {
+      "id": 6,
+      "feedback_number": "FB-2026-006",
+      "order_id": 6,
+      "branch_id": 1,
+      "customer_name": "Live Guest Tester",
+      "customer_phone": "9944112233",
+      "customer_email": null,
+      "overall_rating": 4.0,
+      "general_comment": "",
+      "channel": "QR Bill Scan",
+      "created_at": "2026-10-29 09:48:35.787035"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "user_name": "Rajesh Sharma (Super Admin)",
+      "action": "SYSTEM_INIT",
+      "entity_type": "Database",
+      "entity_id": "ALL",
+      "details": "Seeded initial branches, departments, users, menu items, orders and tickets for Bengaluru branches",
+      "created_at": "2026-10-29 09:24:43.296924"
+    }
+  ],
+  "item_feedback": [
+    {
+      "id": 1,
+      "submission_id": 1,
+      "order_item_id": 1,
+      "item_name": "Dum Handi Chicken Biryani",
+      "rating": 5,
+      "issue_category": null,
+      "follow_up_response": "Rich aroma, authentic spice blend and generous chicken portions",
+      "comment": "Best biryani in Indiranagar!",
+      "created_at": "2026-10-28 08:09:43.296924"
+    },
+    {
+      "id": 2,
+      "submission_id": 1,
+      "order_item_id": 2,
+      "item_name": "Alphonso Mango Lassi",
+      "rating": 4,
+      "issue_category": null,
+      "follow_up_response": "Very refreshing, could be served with a bit less ice",
+      "comment": "Nice thick consistency.",
+      "created_at": "2026-10-28 08:09:43.296924"
+    },
+    {
+      "id": 3,
+      "submission_id": 1,
+      "order_item_id": 3,
+      "item_name": "Shahi Gulab Jamun",
+      "rating": 5,
+      "issue_category": null,
+      "follow_up_response": "Soft, warm and balanced sweetness",
+      "comment": "Loved the saffron flavor.",
+      "created_at": "2026-10-28 08:09:43.296924"
+    },
+    {
+      "id": 4,
+      "submission_id": 2,
+      "order_item_id": 4,
+      "item_name": "Butter Chicken Delhi 6",
+      "rating": 2,
+      "issue_category": "Food Temperature",
+      "follow_up_response": "Dish was lukewarm on arrival at table",
+      "comment": "Tasted okay but needed to be hot.",
+      "created_at": "2026-10-28 16:14:43.296924"
+    },
+    {
+      "id": 5,
+      "submission_id": 3,
+      "order_item_id": 8,
+      "item_name": "Murgh Ghee Roast",
+      "rating": 1,
+      "issue_category": "Service Delay",
+      "follow_up_response": "More than 30 minutes wait time without updates from staff",
+      "comment": "Table was neglected while other later arrivals were served.",
+      "created_at": "2026-10-28 22:04:43.296924"
+    },
+    {
+      "id": 6,
+      "submission_id": 4,
+      "order_item_id": 11,
+      "item_name": "Dal Makhani Royale",
+      "rating": 1,
+      "issue_category": "Taste and Freshness",
+      "follow_up_response": "Excessive salt content, unbalanced spices",
+      "comment": "Over salted, could not eat beyond two bites.",
+      "created_at": "2026-10-29 05:54:43.296924"
+    },
+    {
+      "id": 7,
+      "submission_id": 5,
+      "order_item_id": 13,
+      "item_name": "Dum Handi Chicken Biryani",
+      "rating": 1,
+      "issue_category": "Food Quality",
+      "follow_up_response": "Raw in center, pink meat near bone",
+      "comment": "Chicken biryani pieces were not fully cooked.",
+      "created_at": "2026-10-29 09:24:43.935134"
+    },
+    {
+      "id": 8,
+      "submission_id": 6,
+      "order_item_id": 17,
+      "item_name": "Dum Handi Chicken Biryani",
+      "rating": 5,
+      "issue_category": null,
+      "follow_up_response": "",
+      "comment": "",
+      "created_at": "2026-10-29 09:48:35.787035"
+    },
+    {
+      "id": 9,
+      "submission_id": 6,
+      "order_item_id": 18,
+      "item_name": "Paneer Tikka Angara",
+      "rating": 2,
+      "issue_category": "Food Quality",
+      "follow_up_response": "Paneer was cold and undercooked.",
+      "comment": "",
+      "created_at": "2026-10-29 09:48:35.787035"
+    },
+    {
+      "id": 10,
+      "submission_id": 6,
+      "order_item_id": 19,
+      "item_name": "Murgh Ghee Roast",
+      "rating": 5,
+      "issue_category": null,
+      "follow_up_response": "",
+      "comment": "",
+      "created_at": "2026-10-29 09:48:35.787035"
+    }
+  ],
+  "complaint_tickets": [
+    {
+      "id": 1,
+      "ticket_number": "TKT-2026-001",
+      "order_id": 2,
+      "feedback_submission_id": 2,
+      "item_feedback_id": 4,
+      "branch_id": 1,
+      "department_id": 1,
+      "assigned_staff_id": 3,
+      "item_name": "Butter Chicken Delhi 6",
+      "issue_category": "Food Temperature",
+      "priority": "High",
+      "status": "Resolved",
+      "customer_name": "Sneha Rao",
+      "customer_phone": "9731234567",
+      "customer_comment": "Tasted okay but needed to be hot.",
+      "sla_deadline": "2026-10-28 18:14:43.296924",
+      "acknowledged_at": "2026-10-28 16:24:43.296924",
+      "resolved_at": "2026-10-28 16:59:43.296924",
+      "verified_at": "2026-10-28 17:09:43.296924",
+      "verified_by_user_id": 2,
+      "root_cause": "Food sat under the pickup counter warmer during peak rush while runner was occupied",
+      "corrective_action": "Retrained pass runners on immediate table dispatch. Adjusted heating lamps to 75\u00b0C",
+      "preventive_action": "Introduced maximum 90-second buzzer alert for dishes plated on the pass",
+      "reassignment_reason": null,
+      "reopen_reason": null,
+      "evidence_urls": null,
+      "customer_satisfaction_score": 5,
+      "customer_satisfaction_comment": "Thank you for calling and clarifying. Really appreciate the prompt action!",
+      "created_at": "2026-10-28 16:14:43.296924",
+      "updated_at": "2026-10-28 17:09:43.296924"
+    },
+    {
+      "id": 2,
+      "ticket_number": "TKT-2026-002",
+      "order_id": 3,
+      "feedback_submission_id": 3,
+      "item_feedback_id": 5,
+      "branch_id": 1,
+      "department_id": 2,
+      "assigned_staff_id": 4,
+      "item_name": "Murgh Ghee Roast",
+      "issue_category": "Service Delay",
+      "priority": "High",
+      "status": "In Progress",
+      "customer_name": "Vikramaditya Hegde",
+      "customer_phone": "9980123456",
+      "customer_comment": "Table was neglected while other later arrivals were served.",
+      "sla_deadline": "2026-10-29 00:04:43.296924",
+      "acknowledged_at": "2026-10-28 22:19:43.296924",
+      "resolved_at": null,
+      "verified_at": null,
+      "verified_by_user_id": null,
+      "root_cause": null,
+      "corrective_action": null,
+      "preventive_action": null,
+      "reassignment_reason": null,
+      "reopen_reason": null,
+      "evidence_urls": null,
+      "customer_satisfaction_score": null,
+      "customer_satisfaction_comment": null,
+      "created_at": "2026-10-28 22:04:43.296924",
+      "updated_at": "2026-10-29 09:55:02.725756"
+    },
+    {
+      "id": 3,
+      "ticket_number": "TKT-2026-003",
+      "order_id": 4,
+      "feedback_submission_id": 4,
+      "item_feedback_id": 6,
+      "branch_id": 1,
+      "department_id": 1,
+      "assigned_staff_id": 3,
+      "item_name": "Dal Makhani Royale",
+      "issue_category": "Taste and Freshness",
+      "priority": "Medium",
+      "status": "Resolved Pending Verification",
+      "customer_name": "Divya Subramanian",
+      "customer_phone": "9886234567",
+      "customer_comment": "Over salted, could not eat beyond two bites.",
+      "sla_deadline": "2026-10-29 09:54:43.296924",
+      "acknowledged_at": "2026-10-29 06:06:43.296924",
+      "resolved_at": "2026-10-29 06:29:43.296924",
+      "verified_at": null,
+      "verified_by_user_id": null,
+      "root_cause": "Evening batch reduction caused salt concentration; line cook did not perform mid-shift spoon taste test",
+      "corrective_action": "Batch discarded and remade fresh. Calibrated recipe salt measurement spoons",
+      "preventive_action": "Enforced mandatory head chef sign-off on soup and dal pots before evening service",
+      "reassignment_reason": null,
+      "reopen_reason": null,
+      "evidence_urls": null,
+      "customer_satisfaction_score": null,
+      "customer_satisfaction_comment": null,
+      "created_at": "2026-10-29 05:54:43.296924",
+      "updated_at": "2026-10-29 06:29:43.296924"
+    },
+    {
+      "id": 4,
+      "ticket_number": "TKT-2026-004",
+      "order_id": 5,
+      "feedback_submission_id": 5,
+      "item_feedback_id": 7,
+      "branch_id": 1,
+      "department_id": 1,
+      "assigned_staff_id": null,
+      "item_name": "Dum Handi Chicken Biryani",
+      "issue_category": "Food Quality",
+      "priority": "High",
+      "status": "Resolved",
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_comment": "Chicken biryani pieces were not fully cooked.",
+      "sla_deadline": "2026-10-29 11:24:43.966774",
+      "acknowledged_at": null,
+      "resolved_at": "2026-10-29 09:24:44.131476",
+      "verified_at": "2026-10-29 09:24:44.216697",
+      "verified_by_user_id": 2,
+      "root_cause": "Tandoor heat zone calibrated improperly for jumbo batch",
+      "corrective_action": "Recalibrated temperature sensor and replaced batch",
+      "preventive_action": "Implemented mandatory probe test for every batch before serving",
+      "reassignment_reason": null,
+      "reopen_reason": null,
+      "evidence_urls": null,
+      "customer_satisfaction_score": null,
+      "customer_satisfaction_comment": null,
+      "created_at": "2026-10-29 09:24:43.935134",
+      "updated_at": "2026-10-29 09:24:44.216697"
+    },
+    {
+      "id": 5,
+      "ticket_number": "TKT-2026-005",
+      "order_id": 6,
+      "feedback_submission_id": 6,
+      "item_feedback_id": 9,
+      "branch_id": 1,
+      "department_id": 3,
+      "assigned_staff_id": 7,
+      "item_name": "Paneer Tikka Angara",
+      "issue_category": "Food Quality",
+      "priority": "High",
+      "status": "Assigned",
+      "customer_name": "Live Guest Tester",
+      "customer_phone": "9944112233",
+      "customer_comment": "Paneer was cold and undercooked.",
+      "sla_deadline": "2026-10-29 11:48:35.848992",
+      "acknowledged_at": null,
+      "resolved_at": null,
+      "verified_at": null,
+      "verified_by_user_id": null,
+      "root_cause": null,
+      "corrective_action": null,
+      "preventive_action": null,
+      "reassignment_reason": null,
+      "reopen_reason": null,
+      "evidence_urls": null,
+      "customer_satisfaction_score": null,
+      "customer_satisfaction_comment": null,
+      "created_at": "2026-10-29 09:48:35.787035",
+      "updated_at": "2026-10-29 09:53:37.473852"
+    }
+  ],
+  "ticket_status_history": [
+    {
+      "id": 1,
+      "ticket_id": 1,
+      "old_status": null,
+      "new_status": "New",
+      "changed_by_user_id": null,
+      "notes": "Auto-routed to Kitchen based on issue category",
+      "created_at": "2026-10-28 16:14:43.296924"
+    },
+    {
+      "id": 2,
+      "ticket_id": 1,
+      "old_status": "New",
+      "new_status": "Assigned",
+      "changed_by_user_id": 2,
+      "notes": "Assigned to Chef Suresh",
+      "created_at": "2026-10-28 16:19:43.296924"
+    },
+    {
+      "id": 3,
+      "ticket_id": 1,
+      "old_status": "Assigned",
+      "new_status": "Acknowledged",
+      "changed_by_user_id": 3,
+      "notes": "Investigation initiated at hot pass line",
+      "created_at": "2026-10-28 16:24:43.296924"
+    },
+    {
+      "id": 4,
+      "ticket_id": 1,
+      "old_status": "Acknowledged",
+      "new_status": "In Progress",
+      "changed_by_user_id": 3,
+      "notes": "Audited food temperature logs",
+      "created_at": "2026-10-28 16:34:43.296924"
+    },
+    {
+      "id": 5,
+      "ticket_id": 1,
+      "old_status": "In Progress",
+      "new_status": "Resolved Pending Verification",
+      "changed_by_user_id": 3,
+      "notes": "Corrective action documented, submitted for manager review",
+      "created_at": "2026-10-28 16:59:43.296924"
+    },
+    {
+      "id": 6,
+      "ticket_id": 1,
+      "old_status": "Resolved Pending Verification",
+      "new_status": "Resolved",
+      "changed_by_user_id": 2,
+      "notes": "Manager verified corrective action. Customer notified.",
+      "created_at": "2026-10-28 17:09:43.296924"
+    },
+    {
+      "id": 7,
+      "ticket_id": 2,
+      "old_status": null,
+      "new_status": "New",
+      "changed_by_user_id": null,
+      "notes": "Auto-routed to Service Department",
+      "created_at": "2026-10-28 22:04:43.296924"
+    },
+    {
+      "id": 8,
+      "ticket_id": 2,
+      "old_status": "New",
+      "new_status": "Assigned",
+      "changed_by_user_id": 2,
+      "notes": "Assigned to Priya Menon",
+      "created_at": "2026-10-28 22:14:43.296924"
+    },
+    {
+      "id": 9,
+      "ticket_id": 2,
+      "old_status": "Assigned",
+      "new_status": "In Progress",
+      "changed_by_user_id": 4,
+      "notes": "Checking KOT timestamp records with shift supervisor",
+      "created_at": "2026-10-28 22:29:43.296924"
+    },
+    {
+      "id": 10,
+      "ticket_id": 3,
+      "old_status": null,
+      "new_status": "New",
+      "changed_by_user_id": null,
+      "notes": "Auto-routed to Kitchen",
+      "created_at": "2026-10-29 05:54:43.296924"
+    },
+    {
+      "id": 11,
+      "ticket_id": 3,
+      "old_status": "New",
+      "new_status": "Assigned",
+      "changed_by_user_id": 2,
+      "notes": "Assigned to Chef Suresh",
+      "created_at": "2026-10-29 05:59:43.296924"
+    },
+    {
+      "id": 12,
+      "ticket_id": 3,
+      "old_status": "Assigned",
+      "new_status": "In Progress",
+      "changed_by_user_id": 3,
+      "notes": "Inspected batch samples",
+      "created_at": "2026-10-29 06:09:43.296924"
+    },
+    {
+      "id": 13,
+      "ticket_id": 3,
+      "old_status": "In Progress",
+      "new_status": "Resolved Pending Verification",
+      "changed_by_user_id": 3,
+      "notes": "Batch remade and standardized. Awaiting manager sign-off.",
+      "created_at": "2026-10-29 06:29:43.296924"
+    },
+    {
+      "id": 14,
+      "ticket_id": 4,
+      "old_status": null,
+      "new_status": "New",
+      "changed_by_user_id": null,
+      "notes": "Auto-routed to Kitchen & Culinary based on issue category 'Food Quality' with High priority.",
+      "created_at": "2026-10-29 09:24:43.935134"
+    },
+    {
+      "id": 15,
+      "ticket_id": 4,
+      "old_status": "New",
+      "new_status": "In Progress",
+      "changed_by_user_id": 3,
+      "notes": "Investigation note added by Chef Suresh Rao",
+      "created_at": "2026-10-29 09:24:44.099379"
+    },
+    {
+      "id": 16,
+      "ticket_id": 4,
+      "old_status": "In Progress",
+      "new_status": "Resolved Pending Verification",
+      "changed_by_user_id": 3,
+      "notes": "Corrective action submitted by Chef Suresh Rao. Awaiting Manager verification.",
+      "created_at": "2026-10-29 09:24:44.131476"
+    },
+    {
+      "id": 17,
+      "ticket_id": 4,
+      "old_status": "Resolved Pending Verification",
+      "new_status": "Resolved",
+      "changed_by_user_id": 2,
+      "notes": "Manager Kavita Nair (Branch Manager) verified resolution. Notes: Manager verified batch probe logs and approved.",
+      "created_at": "2026-10-29 09:24:44.216697"
+    },
+    {
+      "id": 18,
+      "ticket_id": 5,
+      "old_status": null,
+      "new_status": "New",
+      "changed_by_user_id": null,
+      "notes": "Auto-routed to Kitchen & Culinary based on issue category 'Food Quality' with High priority.",
+      "created_at": "2026-10-29 09:48:35.787035"
+    },
+    {
+      "id": 19,
+      "ticket_id": 5,
+      "old_status": "Assigned",
+      "new_status": "Assigned",
+      "changed_by_user_id": 2,
+      "notes": "Department reassigned from Kitchen & Culinary to Billing & Cashier. Reason: Internal routing realignment; Assigned to staff: Kiran Kumar",
+      "created_at": "2026-10-29 09:53:37.473852"
+    },
+    {
+      "id": 20,
+      "ticket_id": 2,
+      "old_status": "In Progress",
+      "new_status": "In Progress",
+      "changed_by_user_id": 2,
+      "notes": "Assigned to staff: Priya Menon",
+      "created_at": "2026-10-29 09:55:02.725756"
+    }
+  ],
+  "investigation_notes": [
+    {
+      "id": 1,
+      "ticket_id": 1,
+      "user_id": 3,
+      "user_name": "Chef Suresh Rao",
+      "note_type": "investigation",
+      "note": "Verified kitchen temp probe records at 19:45 PM: curries left stove at 88\u00b0C. Issue occurred during runner handoff.",
+      "created_at": "2026-10-28 16:39:43.296924"
+    },
+    {
+      "id": 2,
+      "ticket_id": 4,
+      "user_id": 3,
+      "user_name": "Chef Suresh Rao",
+      "note_type": "investigation",
+      "note": "Checked tandoor core thermometer log.",
+      "created_at": "2026-10-29 09:24:44.099379"
+    }
+  ],
+  "customer_notifications": [
+    {
+      "id": 1,
+      "ticket_id": 1,
+      "customer_name": "Sneha Rao",
+      "customer_phone": "9731234567",
+      "customer_email": null,
+      "event_type": "resolved_verified",
+      "title": "Resolution Verified & Completed #TKT-2026-001",
+      "message": "Good news Sneha Rao! The corrective action for Ticket #TKT-2026-001 ('Butter Chicken Delhi 6') has been verified by manager Kavita Nair: Retrained pass runners on immediate table dispatch. Adjusted heating lamps to 75\u00b0C.",
+      "channel": "In-App Demo",
+      "is_read": 1,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-28 17:09:43.296924"
+    },
+    {
+      "id": 2,
+      "ticket_id": 4,
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_email": "rohan.k@example.com",
+      "event_type": "ticket_created",
+      "title": "Complaint Registered #TKT-2026-004",
+      "message": "Hello Rohan Kulkarni, your concern regarding 'Dum Handi Chicken Biryani' (Food Quality) from Order #ORD-2026-105 has been escalated as Ticket #TKT-2026-004 and routed to our Kitchen & Culinary team.",
+      "channel": "In-App Demo",
+      "is_read": 0,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:24:44.009728"
+    },
+    {
+      "id": 3,
+      "ticket_id": 4,
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_email": "rohan.k@example.com",
+      "event_type": "investigation_started",
+      "title": "Investigation In Progress #TKT-2026-004",
+      "message": "Our Kitchen & Culinary team has begun investigating your feedback regarding 'Dum Handi Chicken Biryani'. We are actively looking into the root cause.",
+      "channel": "In-App Demo",
+      "is_read": 0,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:24:44.107881"
+    },
+    {
+      "id": 4,
+      "ticket_id": 4,
+      "customer_name": "Rohan Kulkarni",
+      "customer_phone": "9611234567",
+      "customer_email": "rohan.k@example.com",
+      "event_type": "resolved_verified",
+      "title": "Resolution Verified & Completed #TKT-2026-004",
+      "message": "Dear Rohan Kulkarni, manager Kavita Nair (Branch Manager) has verified the corrective action for Ticket #TKT-2026-004 ('Dum Handi Chicken Biryani'): Recalibrated temperature sensor and replaced batch. Thank you for helping us maintain the highest dining standards.",
+      "channel": "In-App Demo",
+      "is_read": 0,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:24:44.239750"
+    },
+    {
+      "id": 5,
+      "ticket_id": 5,
+      "customer_name": "Live Guest Tester",
+      "customer_phone": "9944112233",
+      "customer_email": null,
+      "event_type": "ticket_created",
+      "title": "Complaint Registered #TKT-2026-005",
+      "message": "Hello Live Guest Tester, your concern regarding 'Paneer Tikka Angara' (Food Quality) from Order #ORD-2026-106 has been escalated as Ticket #TKT-2026-005 and routed to our Kitchen & Culinary team.",
+      "channel": "In-App Demo",
+      "is_read": 0,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:48:35.914863"
+    },
+    {
+      "id": 6,
+      "ticket_id": 5,
+      "customer_name": "Live Guest Tester",
+      "customer_phone": "9944112233",
+      "customer_email": null,
+      "event_type": "ticket_assigned",
+      "title": "Staff Assigned to Ticket #TKT-2026-005",
+      "message": "Ticket #TKT-2026-005 has been assigned to Kiran Kumar from the Billing & Cashier department for expedited review.",
+      "channel": "In-App Demo",
+      "is_read": 1,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:53:37.502139"
+    },
+    {
+      "id": 7,
+      "ticket_id": 2,
+      "customer_name": "Vikramaditya Hegde",
+      "customer_phone": "9980123456",
+      "customer_email": "vikram.h@example.com",
+      "event_type": "ticket_assigned",
+      "title": "Staff Assigned to Ticket #TKT-2026-002",
+      "message": "Ticket #TKT-2026-002 has been assigned to Priya Menon from the Service & Hospitality department for expedited review.",
+      "channel": "In-App Demo",
+      "is_read": 1,
+      "delivery_status": "Delivered",
+      "created_at": "2026-10-29 09:55:02.753579"
+    }
+  ],
+  "notification_delivery_logs": [
+    {
+      "id": 1,
+      "notification_id": 2,
+      "channel": "In-App Demo",
+      "recipient": "9611234567",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9611234567 via In-App Demo",
+      "timestamp": "2026-10-29 09:24:44.012294"
+    },
+    {
+      "id": 2,
+      "notification_id": 3,
+      "channel": "In-App Demo",
+      "recipient": "9611234567",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9611234567 via In-App Demo",
+      "timestamp": "2026-10-29 09:24:44.109431"
+    },
+    {
+      "id": 3,
+      "notification_id": 4,
+      "channel": "In-App Demo",
+      "recipient": "9611234567",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9611234567 via In-App Demo",
+      "timestamp": "2026-10-29 09:24:44.241288"
+    },
+    {
+      "id": 4,
+      "notification_id": 5,
+      "channel": "In-App Demo",
+      "recipient": "9944112233",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9944112233 via In-App Demo",
+      "timestamp": "2026-10-29 09:48:35.920021"
+    },
+    {
+      "id": 5,
+      "notification_id": 6,
+      "channel": "In-App Demo",
+      "recipient": "9944112233",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9944112233 via In-App Demo",
+      "timestamp": "2026-10-29 09:53:37.503760"
+    },
+    {
+      "id": 6,
+      "notification_id": 7,
+      "channel": "In-App Demo",
+      "recipient": "9980123456",
+      "status": "Delivered",
+      "provider_response": "Mock notification dispatched to 9980123456 via In-App Demo",
+      "timestamp": "2026-10-29 09:55:02.755492"
+    }
+  ]
+}

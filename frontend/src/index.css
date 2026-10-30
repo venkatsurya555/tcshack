@@ -1,0 +1,562 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #faf6f0;
+    color: #21150e;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+}
+
+/* Tomato Sauce Scrollbar ("Slider") Theme & Flowing Animations */
+@keyframes sauceFlowing {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}
+
+@keyframes sauceDripDrop {
+  0%, 100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  40% {
+    transform: translateY(3px) scaleY(1.22) scaleX(0.88);
+  }
+  70% {
+    transform: translateY(5px) scaleY(1.35) scaleX(0.78);
+  }
+  85% {
+    transform: translateY(1px) scaleY(0.95) scaleX(1.05);
+  }
+}
+
+/* Custom retro tomato sauce scrollbar - warm, appetizing Heinz ketchup theme */
+.tomato-sauce-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ea3a1e rgba(245, 158, 11, 0.15);
+}
+
+.tomato-sauce-scrollbar::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.tomato-sauce-scrollbar::-webkit-scrollbar-track {
+  background: rgba(254, 243, 199, 0.8);
+  border-radius: 9999px;
+  margin: 6px 2px;
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 0 4px rgba(217, 119, 6, 0.12);
+}
+
+.tomato-sauce-scrollbar::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(
+    180deg,
+    #ff6647 0px,
+    #ea3a1e 10px,
+    #c7280f 20px,
+    #ff6647 30px
+  );
+  background-size: 100% 30px;
+  animation: sauceFlowing 1.8s linear infinite;
+  border-radius: 9999px;
+  border: 1.5px solid #b9220a;
+  box-shadow: 
+    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.85),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+    0 0 8px rgba(234, 58, 30, 0.6);
+}
+
+.tomato-sauce-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: repeating-linear-gradient(
+    180deg,
+    #ff7a5c 0px,
+    #f04824 10px,
+    #d42f15 20px,
+    #ff7a5c 30px
+  );
+  box-shadow: 
+    inset 2px 2px 3px rgba(255, 255, 255, 0.95),
+    0 0 12px rgba(240, 72, 36, 0.8);
+}
+
+/* Hide native scrollbar when using custom overlay slider */
+.hide-native-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-native-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Retro Food Review Theme Styles & Animations */
+.font-retro {
+  font-family: 'Lilita One', 'Fredoka', 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-diner {
+  font-family: 'Fredoka', 'Lilita One', system-ui, sans-serif;
+}
+
+@keyframes popStar {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.4) rotate(14deg); }
+  75% { transform: scale(0.92) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes starGlow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(250, 204, 21, 0.6)); }
+  50% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.9)); }
+}
+
+@keyframes wiggleEmoji {
+  0%, 100% { transform: rotate(0deg) scale(1.12); }
+  25% { transform: rotate(-9deg) scale(1.16); }
+  75% { transform: rotate(9deg) scale(1.16); }
+}
+
+@keyframes bounceEmoji {
+  0%, 100% { transform: translateY(0) scale(1.12); }
+  50% { transform: translateY(-7px) scale(1.18); }
+}
+
+@keyframes angryShake {
+  0%, 100% { transform: translateX(0) scale(1.12); }
+  20% { transform: translateX(-4px) rotate(-5deg) scale(1.15); }
+  40% { transform: translateX(4px) rotate(5deg) scale(1.15); }
+  60% { transform: translateX(-3px) rotate(-3deg) scale(1.15); }
+  80% { transform: translateX(3px) rotate(3deg) scale(1.15); }
+}
+
+@keyframes burgerBreath {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-2px) scale(1.003); }
+}
+
+@keyframes lettuceFloat {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.012); }
+}
+
+@keyframes doodleFloat {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(4deg); }
+}
+
+@keyframes pulsePill {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.25); }
+}
+
+.animate-pop-star {
+  animation: popStar 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-star-glow {
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+.animate-bounce-emoji {
+  animation: bounceEmoji 0.65s ease-in-out infinite;
+}
+
+.animate-angry-shake {
+  animation: angryShake 0.45s ease-in-out infinite;
+}
+
+.animate-wiggle-emoji {
+  animation: wiggleEmoji 0.6s ease-in-out infinite;
+}
+
+.animate-burger-breath {
+  animation: burgerBreath 4s ease-in-out infinite;
+}
+
+.animate-lettuce-float {
+  animation: lettuceFloat 3.5s ease-in-out infinite;
+}
+
+.animate-subtle-doodle:hover {
+  animation: doodleFloat 0.8s ease-in-out infinite;
+}
+
+/* Continuous Living Animations for Border Doodles ("emojis") */
+@keyframes doodleFloatWaveA {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) rotate(4deg) scale(1.08);
+  }
+}
+
+@keyframes doodleFloatWaveB {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(4px) rotate(-4deg) scale(1.08);
+  }
+}
+
+@keyframes doodlePulseWave {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.12) rotate(-2deg);
+  }
+}
+
+@keyframes doodleSwayWave {
+  0%, 100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-3px);
+  }
+}
+
+/* Circular Revolving Motion for Border Food Emojis */
+@keyframes circularRevolveClockwise {
+  0% {
+    transform: rotate(0deg) translate(6px, 0) rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) translate(6px, 0) rotate(-90deg);
+  }
+  50% {
+    transform: rotate(180deg) translate(6px, 0) rotate(-180deg);
+  }
+  75% {
+    transform: rotate(270deg) translate(6px, 0) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(6px, 0) rotate(-360deg);
+  }
+}
+
+@keyframes circularRevolveCounterClockwise {
+  0% {
+    transform: rotate(0deg) translate(6px, 0) rotate(0deg);
+  }
+  25% {
+    transform: rotate(-90deg) translate(6px, 0) rotate(90deg);
+  }
+  50% {
+    transform: rotate(-180deg) translate(6px, 0) rotate(180deg);
+  }
+  75% {
+    transform: rotate(-270deg) translate(6px, 0) rotate(270deg);
+  }
+  100% {
+    transform: rotate(-360deg) translate(6px, 0) rotate(360deg);
+  }
+}
+
+.animate-circular-revolve-cw {
+  animation: circularRevolveClockwise 5.2s linear infinite;
+  will-change: transform;
+}
+
+.animate-circular-revolve-ccw {
+  animation: circularRevolveCounterClockwise 5.8s linear infinite;
+  will-change: transform;
+}
+
+/* Individual Icon Living Micro-Animations */
+@keyframes steamRise {
+  0% {
+    opacity: 0.3;
+    transform: translateY(2px) scaleX(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px) scaleX(1.1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(-5px) scaleX(0.85);
+  }
+}
+
+@keyframes yolkSquish {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.18, 0.88) translateY(1px);
+  }
+}
+
+@keyframes candleFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(1.25, 0.85) rotate(-5deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.85, 1.25) rotate(5deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes fryPop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3.5px);
+  }
+}
+
+.animate-steam-rise {
+  animation: steamRise 2s ease-in-out infinite;
+}
+
+.animate-yolk-squish {
+  animation: yolkSquish 2.2s ease-in-out infinite;
+}
+
+.animate-candle-flicker {
+  animation: candleFlicker 1.4s ease-in-out infinite;
+}
+
+.animate-fry-pop {
+  animation: fryPop 2.4s ease-in-out infinite;
+}
+
+.animate-doodle-float-a {
+  animation: doodleFloatWaveA 3s ease-in-out infinite;
+}
+
+.animate-doodle-float-b {
+  animation: doodleFloatWaveB 3.3s ease-in-out infinite;
+}
+
+.animate-doodle-pulse {
+  animation: doodlePulseWave 2.8s ease-in-out infinite;
+}
+
+.animate-doodle-sway {
+  animation: doodleSwayWave 3.1s ease-in-out infinite;
+}
+
+/* Continuous Living Animations for Rating Emojis */
+@keyframes emojiLaughContinuous {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.12);
+  }
+}
+
+@keyframes emojiSmileContinuous {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-6deg) scale(1.08);
+  }
+  75% {
+    transform: rotate(6deg) scale(1.08);
+  }
+}
+
+@keyframes emojiNeutralContinuous {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.06) translateY(-2px);
+  }
+}
+
+@keyframes emojiSadContinuous {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(3px) scale(0.96);
+  }
+}
+
+@keyframes emojiAngryContinuous {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  20% {
+    transform: translateX(-3px) rotate(-4deg) scale(1.08);
+  }
+  40% {
+    transform: translateX(3px) rotate(4deg) scale(1.08);
+  }
+  60% {
+    transform: translateX(-2px) rotate(-2deg) scale(1.08);
+  }
+  80% {
+    transform: translateX(2px) rotate(2deg) scale(1.08);
+  }
+}
+
+.animate-emoji-laugh-continuous {
+  animation: emojiLaughContinuous 1.3s ease-in-out infinite;
+}
+
+.animate-emoji-smile-continuous {
+  animation: emojiSmileContinuous 1.8s ease-in-out infinite;
+}
+
+.animate-emoji-neutral-continuous {
+  animation: emojiNeutralContinuous 2.4s ease-in-out infinite;
+}
+
+.animate-emoji-sad-continuous {
+  animation: emojiSadContinuous 2.1s ease-in-out infinite;
+}
+
+.animate-emoji-angry-continuous {
+  animation: emojiAngryContinuous 0.9s ease-in-out infinite;
+}
+
+/* Calm, pleasant circular motion animations for the review emojis */
+@keyframes calmOrbitCircular {
+  0% {
+    transform: rotate(0deg) translateX(min(44vw, 295px)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(min(44vw, 295px)) rotate(-360deg);
+  }
+}
+
+.animate-revolve-orbit {
+  animation: calmOrbitCircular 44s linear infinite;
+  will-change: transform;
+}
+
+@keyframes calmGentleFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.06);
+  }
+}
+
+.animate-gentle-float {
+  animation: calmGentleFloat 4.2s ease-in-out infinite;
+}
+
+/* Micro circular orbital motion for rating emojis - calm, pleasant, non-intrusive */
+@keyframes calmCircularMicro {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(2.5px, -2.5px) rotate(2deg);
+  }
+  50% {
+    transform: translate(0px, -4.5px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-2.5px, -2.5px) rotate(-2deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+.animate-calm-circular-micro {
+  animation: calmCircularMicro 3.8s ease-in-out infinite;
+}
+
+/* ============================================================ */
+/* MINIMALIST & ATTRACTIVE ADMIN THEME (Subtle In-Style Animations) */
+/* ============================================================ */
+
+/* Animated in-style micro-lift for admin cards */
+.admin-card {
+  background-color: #ffffff;
+  border: 1px solid #ebdcc6;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(66, 46, 32, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.admin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(66, 46, 32, 0.08);
+  border-color: #d97706;
+}
+
+/* Subtle steam micro-wave for food emblems */
+@keyframes adminSteamWave {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+}
+
+.animate-admin-steam {
+  animation: adminSteamWave 3s ease-in-out infinite;
+}
+
+/* Subtle glow for live indicators */
+@keyframes adminWarmPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.75;
+  }
+}
+
+.animate-admin-pulse {
+  animation: adminWarmPulse 2.2s ease-in-out infinite;
+}
+
+/* Clean High-Contrast Admin Table */
+.admin-table-row {
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.admin-table-row:hover {
+  background-color: #faf4ea;
+}
+
+/* Interactive Pill Micro-Bounce */
+.admin-pill-btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.admin-pill-btn:hover {
+  transform: translateY(-1px);
+}
+.admin-pill-btn:active {
+  transform: scale(0.96);
+}

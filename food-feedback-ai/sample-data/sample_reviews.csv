@@ -1,0 +1,38 @@
+review_text,expected_category,expected_sentiment
+"My order took 45 minutes to arrive and the waiter kept giving excuses.",Slow Service,NEGATIVE
+"The delivery was extremely slow, almost an hour late.",Slow Service,NEGATIVE
+"We waited way too long for our food while other tables were being served.",Slow Service,NEGATIVE
+"The wait time was unacceptable, 50 minutes for a simple pasta dish.",Slow Service,NEGATIVE
+"Took forever to bring out our appetizers.",Slow Service,NEGATIVE
+"The food was served cold and lacked any fresh aroma.",Food Temperature,NEGATIVE
+"My meal was lukewarm, definitely not hot enough.",Food Temperature,NEGATIVE
+"Soup arrived icy cold, had to send it back to the microwave.",Food Temperature,NEGATIVE
+"The burger was stone cold and the cheese was hard.",Food Temperature,NEGATIVE
+"Chicken curry was barely warm when it reached our table.",Food Temperature,NEGATIVE
+"The paneer was stale and smelled sour.",Taste and Quality,NEGATIVE
+"The meat was tough and rubbery, completely unseasoned.",Taste and Quality,NEGATIVE
+"Biryani lacked flavor and the rice was uncomfortably dry.",Taste and Quality,NEGATIVE
+"Gravy tasted artificial and way too salty to eat.",Taste and Quality,NEGATIVE
+"The fish was not fresh and tasted fishy in a bad way.",Taste and Quality,NEGATIVE
+"Found a hair in my salad bowl, completely disgusted.",Hygiene and Cleanliness,NEGATIVE
+"The cutlery was dirty and had sticky grease spots on the fork.",Hygiene and Cleanliness,NEGATIVE
+"Tables were sticky and the water glasses smelled bad.",Hygiene and Cleanliness,NEGATIVE
+"Saw a fly hovering over the open salad bar, poor hygiene.",Hygiene and Cleanliness,NEGATIVE
+"Prices are ridiculously high for such tiny portions.",Pricing and Billing,NEGATIVE
+"They overcharged us on the bill and added a hidden service fee.",Pricing and Billing,NEGATIVE
+"Way overpriced for basic diner food, not worth 800 rupees.",Pricing and Billing,NEGATIVE
+"There was a billing error where double drinks were charged.",Pricing and Billing,NEGATIVE
+"The waiter was extremely rude and rolled his eyes when we asked for water.",Staff Behaviour,NEGATIVE
+"Staff was completely indifferent and ignored us when we called.",Staff Behaviour,NEGATIVE
+"The manager was arrogant and refused to apologize for the delay.",Staff Behaviour,NEGATIVE
+"Packaging was damaged and the curry spilled all over the paper bag.",Delivery and Packaging,NEGATIVE
+"The delivery driver was careless and squished the pizza box.",Delivery and Packaging,NEGATIVE
+"Tamarind chutney leaked through the container into the dessert.",Delivery and Packaging,NEGATIVE
+"Portion size was laughable, barely three spoonfuls of dal.",Portion Size,NEGATIVE
+"Very small serving for a family platter, left the restaurant hungry.",Portion Size,NEGATIVE
+"Absolutely sensational butter chicken and the garlic naan was heavenly!",Positive Feedback,POSITIVE
+"Prompt service, warm hospitality, and the desserts were to die for.",Positive Feedback,POSITIVE
+"Best dining experience in Bengaluru this year, five stars all around!",Positive Feedback,POSITIVE
+"Everything was freshly made, piping hot, and full of authentic flavor.",Positive Feedback,POSITIVE
+"The atmosphere was fine, nothing special to write home about.",Neutral / Ambiguous,NEUTRAL
+"It is what it is, decent quick bite on a Tuesday afternoon.",Neutral / Ambiguous,NEUTRAL

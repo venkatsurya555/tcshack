@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8000}
+
+spring:
+  application:
+    name: food-feedback-ai
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb+srv://srivanjiththangaraj48_db_user:xamC4we4xibMFYau@cluster0.kamaqfs.mongodb.net/food_feedback_ai?retryWrites=true&w=majority}
+      auto-index-creation: true
+
+ai-service:
+  engine: native-java
+  default-similarity-threshold: 0.65
+  clustering-algorithm: agglomerative
