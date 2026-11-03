@@ -13,13 +13,17 @@ export const ModeSwitcher: React.FC = () => {
     location.pathname.startsWith('/feedback');
 
   return (
-    <div className="fixed top-2.5 right-3.5 z-50 flex items-center bg-[#1a110a]/95 backdrop-blur-md border border-amber-500/50 rounded-full p-1 shadow-2xl select-none">
+    <aside
+      aria-label="Portal Navigation"
+      className="fixed bottom-3.5 left-1/2 -translate-x-1/2 sm:bottom-auto sm:top-2.5 sm:left-auto sm:right-3.5 sm:translate-x-0 z-50 flex items-center bg-[#1a110a]/95 backdrop-blur-md border border-amber-500/50 rounded-full p-1 shadow-2xl select-none transition-all duration-300"
+    >
       <button
+        type="button"
         onClick={() => navigate('/review')}
-        className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+        className={`flex items-center space-x-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
           isUserMode
             ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-md scale-105'
-            : 'text-amber-200/80 hover:text-amber-100 hover:bg-amber-950/40'
+            : 'text-amber-200/80 hover:text-amber-100 hover:bg-amber-950/40 active:scale-95'
         }`}
         title="Switch to User / Diner Review Page"
       >
@@ -28,17 +32,18 @@ export const ModeSwitcher: React.FC = () => {
       </button>
 
       <button
+        type="button"
         onClick={() => navigate('/')}
-        className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+        className={`flex items-center space-x-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
           !isUserMode
             ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-md scale-105'
-            : 'text-amber-200/80 hover:text-amber-100 hover:bg-amber-950/40'
+            : 'text-amber-200/80 hover:text-amber-100 hover:bg-amber-950/40 active:scale-95'
         }`}
         title="Switch to Admin Operations Dashboard"
       >
         <LayoutDashboard className="w-3.5 h-3.5" />
         <span>Admin Page</span>
       </button>
-    </div>
+    </aside>
   );
 };

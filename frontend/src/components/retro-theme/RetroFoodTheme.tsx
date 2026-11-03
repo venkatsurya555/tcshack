@@ -223,36 +223,36 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
       <RevolvingEmojisOrbit />
 
       {/* Top Floating Preset Switcher (Applicable to Any Restaurant & Students Mess) */}
-      <div className="relative z-30 mb-3 flex items-center justify-center">
-        <div className="bg-[#1b120c]/90 px-2 py-1.5 rounded-full border border-amber-600/40 shadow-xl flex items-center space-x-1.5 backdrop-blur-md">
+      <div className="relative z-30 mb-2.5 sm:mb-3 flex items-center justify-center px-1">
+        <div className="bg-[#1b120c]/90 px-1.5 sm:px-2 py-1 sm:py-1.5 rounded-2xl sm:rounded-full border border-amber-600/40 shadow-xl flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 backdrop-blur-md max-w-full">
           <button
             type="button"
             onClick={() => handleModeChange('universal')}
-            className={`px-3 py-1 rounded-full text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
               venueMode === 'universal'
                 ? 'bg-amber-500 text-[#1a110a] font-bold shadow-md scale-105'
                 : 'text-amber-200/80 hover:text-amber-100 hover:bg-white/5'
             }`}
           >
             <span>🍽️</span>
-            <span>ALL RESTAURANTS</span>
+            <span>RESTAURANTS</span>
           </button>
           <button
             type="button"
             onClick={() => handleModeChange('mess')}
-            className={`px-3 py-1 rounded-full text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
               venueMode === 'mess'
                 ? 'bg-amber-500 text-[#1a110a] font-bold shadow-md scale-105'
                 : 'text-amber-200/80 hover:text-amber-100 hover:bg-white/5'
             }`}
           >
             <span>🍛</span>
-            <span>STUDENTS MESS</span>
+            <span>STUDENT MESS</span>
           </button>
           <button
             type="button"
             onClick={() => handleModeChange('burger')}
-            className={`px-3 py-1 rounded-full text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-retro tracking-wide transition-all flex items-center space-x-1 cursor-pointer ${
               venueMode === 'burger'
                 ? 'bg-amber-500 text-[#1a110a] font-bold shadow-md scale-105'
                 : 'text-amber-200/80 hover:text-amber-100 hover:bg-white/5'
