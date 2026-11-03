@@ -21,21 +21,27 @@ import { AIReviewIntelligence } from './pages/AIReviewIntelligence';
 import { CustomerFeedbackPage } from './pages/CustomerFeedbackPage';
 import { ComplaintTrackingPage } from './pages/ComplaintTrackingPage';
 import { ThemePreviewPage } from './pages/ThemePreviewPage';
+import { ModeSwitcher } from './components/ModeSwitcher';
 
 export function App() {
   return (
     <HashRouter>
       <AuthProvider>
+        {/* Global floating switcher between User Review Page and Admin Dashboard */}
+        <ModeSwitcher />
+
         <Routes>
-          {/* Customer Facing Portal (Mobile-First Standalone) */}
-          <Route path="/feedback/:token" element={<CustomerFeedbackPage />} />
-          <Route path="/track/:ticketNumber" element={<ComplaintTrackingPage />} />
+          {/* Customer / User Review Portal (Mobile-First Standalone) */}
+          <Route path="/review" element={<ThemePreviewPage />} />
           <Route path="/theme-preview" element={<ThemePreviewPage />} />
           <Route path="/diner-review" element={<ThemePreviewPage />} />
+          <Route path="/feedback/:token" element={<CustomerFeedbackPage />} />
+          <Route path="/track/:ticketNumber" element={<ComplaintTrackingPage />} />
 
           {/* Admin & Department Operations Dashboard */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Overview />} />
+            <Route path="admin" element={<Overview />} />
             <Route path="feedback" element={<FeedbackManagement />} />
             <Route path="complaints" element={<ComplaintsManagement />} />
             <Route path="department-ops" element={<DepartmentOperations />} />
