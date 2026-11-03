@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071C26"/>
+      <stop offset="60%" stop-color="#0B2633"/>
+      <stop offset="100%" stop-color="#173744"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#20C5B5" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#0B2633" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#071C26"/>
+    </linearGradient>
+    <linearGradient id="boatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF965C"/>
+      <stop offset="100%" stop-color="#E85D04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Sky & Terrain -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Storm Rain overlay lines -->
+  <g stroke="rgba(66, 217, 232, 0.15)" stroke-width="1.5">
+    <line x1="50" y1="20" x2="30" y2="90"/>
+    <line x1="180" y1="40" x2="160" y2="110"/>
+    <line x1="320" y1="10" x2="300" y2="80"/>
+    <line x1="450" y1="50" x2="430" y2="120"/>
+    <line x1="600" y1="30" x2="580" y2="100"/>
+    <line x1="720" y1="60" x2="700" y2="130"/>
+    <line x1="100" y1="120" x2="80" y2="190"/>
+    <line x1="250" y1="140" x2="230" y2="210"/>
+    <line x1="400" y1="130" x2="380" y2="200"/>
+    <line x1="550" y1="150" x2="530" y2="220"/>
+    <line x1="680" y1="160" x2="660" y2="230"/>
+  </g>
+
+  <!-- Distant submerged trees / hills -->
+  <path d="M 0 350 Q 150 320 300 360 T 600 340 T 800 370 L 800 600 L 0 600 Z" fill="#0B2633" opacity="0.9"/>
+  <path d="M 0 400 Q 200 370 450 410 T 800 390 L 800 600 L 0 600 Z" fill="url(#waterGrad)"/>
+
+  <!-- Water Waves -->
+  <path d="M 0 430 C 120 420, 220 440, 350 425 C 480 410, 620 435, 800 420 L 800 600 L 0 600 Z" fill="#071C26" opacity="0.6"/>
+  <path d="M 0 470 C 150 460, 280 480, 440 465 C 600 450, 700 475, 800 460 L 800 600 L 0 600 Z" fill="#071C26" opacity="0.8"/>
+
+  <!-- Emergency Rescue Boat (Silhouette with orange high-vis gear) -->
+  <g transform="translate(420, 370)">
+    <!-- Boat Hull -->
+    <path d="M 0 50 L 180 50 L 220 20 L 20 20 Z" fill="#173744" stroke="#42D9E8" stroke-width="2"/>
+    <path d="M 20 20 L 200 20 L 195 28 L 25 28 Z" fill="url(#boatGrad)"/>
+    
+    <!-- Responders with Lifevests -->
+    <!-- Responder 1 (Steering) -->
+    <circle cx="65" cy="-5" r="10" fill="#F4F8FA"/>
+    <path d="M 50 8 L 80 8 L 85 30 L 45 30 Z" fill="#FF965C"/>
+    
+    <!-- Responder 2 (Spotter looking out) -->
+    <circle cx="115" cy="-10" r="10" fill="#F4F8FA"/>
+    <path d="M 100 3 L 130 3 L 135 28 L 95 28 Z" fill="#FF965C"/>
+    <!-- Binoculars / Radio -->
+    <line x1="125" y1="-5" x2="145" y2="-12" stroke="#20C5B5" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Responder 3 (Rescue tech) -->
+    <circle cx="160" cy="-8" r="10" fill="#F4F8FA"/>
+    <path d="M 145 5 L 175 5 L 180 28 L 140 28 Z" fill="#FF965C"/>
+
+    <!-- Searchlight beam -->
+    <polygon points="145,-12 400,-80 450,-10 145,-5" fill="rgba(66, 217, 232, 0.12)"/>
+  </g>
+
+  <!-- Water ripple rings -->
+  <ellipse cx="520" cy="435" rx="140" ry="8" fill="none" stroke="rgba(32, 197, 181, 0.4)" stroke-width="1.5"/>
+  <ellipse cx="500" cy="450" rx="180" ry="10" fill="none" stroke="rgba(32, 197, 181, 0.2)" stroke-width="1"/>
+
+  <!-- Radar Overlay Graticule -->
+  <circle cx="700" cy="100" r="70" fill="none" stroke="rgba(32, 197, 181, 0.2)" stroke-width="1"/>
+  <circle cx="700" cy="100" r="45" fill="none" stroke="rgba(32, 197, 181, 0.25)" stroke-width="1"/>
+  <circle cx="700" cy="100" r="20" fill="none" stroke="rgba(32, 197, 181, 0.3)" stroke-width="1"/>
+  <line x1="630" y1="100" x2="770" y2="100" stroke="rgba(32, 197, 181, 0.2)"/>
+  <line x1="700" y1="30" x2="700" y2="170" stroke="rgba(32, 197, 181, 0.2)"/>
+  <line x1="700" y1="100" x2="750" y2="60" stroke="#42D9E8" stroke-width="2"/>
+  <text x="645" y="190" fill="#42D9E8" font-family="'Space Grotesk', sans-serif" font-size="10" letter-spacing="1">DISASTER SWEEP</text>
+</svg>
