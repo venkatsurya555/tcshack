@@ -144,15 +144,15 @@ export const UniversalFoodBanner: React.FC<UniversalFoodBannerProps> = ({
         {/* Elegant Brass & Herb Chef's Trim Divider */}
         <div className="relative overflow-hidden z-10 -my-0.5 shadow-inner">
           {/* Golden brass chef strip */}
-          <div className="bg-[#b45309] h-2.5 sm:h-3 w-full flex items-center justify-between px-4 relative">
+          <div className="bg-[#b45309] h-2.5 sm:h-3 w-full flex items-center justify-between px-2 sm:px-4 relative">
             <div className="absolute inset-x-0 bottom-0 h-1 bg-[#853a06]" />
-            <div className="w-2 h-1 bg-amber-200/60 rounded-full" />
-            <div className="flex items-center space-x-2 text-[10px] font-retro text-amber-100 uppercase tracking-widest">
+            <div className="w-1.5 h-1 bg-amber-200/60 rounded-full" />
+            <div className="flex items-center space-x-1.5 text-[8.5px] sm:text-[10px] font-retro text-amber-100 uppercase tracking-wider truncate">
               <span>✦</span>
               <span>FINE DINING & HOSPITALITY</span>
               <span>✦</span>
             </div>
-            <div className="w-2 h-1 bg-amber-200/60 rounded-full" />
+            <div className="w-1.5 h-1 bg-amber-200/60 rounded-full" />
           </div>
 
           {/* Fresh garnish green line */}

@@ -48,9 +48,9 @@ interface RetroFoodThemeProps {
 // 1. UNIVERSAL RESTAURANT PRESET (Fine Dining, Multicuisine, Bistro, Family Dining)
 export const UNIVERSAL_SAMPLE_ITEMS: ThemeOrderItem[] = [
   { id: 'u1', name: 'BUTTER NAAN / ROTI', rating: 5, feedback: '' },
-  { id: 'u2', name: 'PANEER TIKKA / STARTER', rating: 5, feedback: '' },
-  { id: 'u3', name: 'SPECIAL CURRY / GRAVY', rating: 5, feedback: '' },
-  { id: 'u4', name: 'BIRYANI / STEAMED RICE', rating: 5, feedback: '' },
+  { id: 'u2', name: 'PANEER TIKKA', rating: 5, feedback: '' },
+  { id: 'u3', name: 'SPECIAL CURRY', rating: 5, feedback: '' },
+  { id: 'u4', name: 'DUM BIRYANI', rating: 5, feedback: '' },
   { id: 'u5', name: 'DESSERT / SWEET', rating: 5, feedback: '' },
   { id: 'u6', name: 'CHILLED BEVERAGE', rating: 5, feedback: '' }
 ];
@@ -214,7 +214,7 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
       : 'THE ROYAL RASOI RESTAURANT');
 
   return (
-    <div className="w-full min-h-screen py-6 px-3 flex flex-col items-center justify-center bg-[#291e17] font-diner relative overflow-hidden">
+    <div className="w-full min-h-screen py-2 sm:py-6 px-0.5 sm:px-3 pb-32 sm:pb-12 flex flex-col items-center justify-center bg-[#291e17] font-diner relative overflow-hidden">
       {/* Decorative ambient background blur spots */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-700/10 rounded-full blur-3xl pointer-events-none" />
@@ -352,30 +352,30 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
                   <span>FEEDBACK & STAR</span>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   {visibleItems.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center justify-between gap-1.5 py-0.5 group"
+                      className="flex items-center justify-between gap-1 py-0.5 group"
                     >
                       {/* Item Name */}
-                      <span className="font-retro text-[12px] sm:text-[13px] tracking-wide text-[#faefcb] truncate max-w-[130px] sm:max-w-[140px] drop-shadow-xs uppercase">
+                      <span className="font-retro text-[10.5px] sm:text-[12px] leading-tight tracking-wide text-[#faefcb] flex-1 min-w-0 pr-1 drop-shadow-xs uppercase">
                         {item.name}
                       </span>
 
                       {/* Feedback Pill Input */}
-                      <div className="flex-1 max-w-[125px]">
+                      <div className="w-18 xs:w-22 sm:w-26 shrink-0">
                         <input
                           type="text"
-                          placeholder={venueMode === 'mess' ? 'TASTE / NOTE' : 'FEEDBACK'}
+                          placeholder="NOTE"
                           value={item.feedback || ''}
                           onChange={(e) => handleItemFeedbackChange(item.id, e.target.value)}
-                          className="w-full bg-white text-[#3d2a1b] font-retro text-[11px] placeholder:text-[#523d2d]/60 px-2.5 py-1 rounded-full text-center border-none shadow-xs focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all hover:scale-105 active:scale-95"
+                          className="w-full bg-white text-[#3d2a1b] font-retro text-[9.5px] sm:text-[11px] placeholder:text-[#523d2d]/60 px-1.5 py-0.5 sm:py-1 rounded-full text-center border-none shadow-xs focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
                         />
                       </div>
 
                       {/* Star Rating Button */}
-                      <div className="shrink-0 flex items-center">
+                      <div className="shrink-0 flex items-center pl-0.5">
                         <StarIconDoodle
                           filled={(item.rating ?? 5) >= 4}
                           onClick={() =>
@@ -402,29 +402,29 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
               </div>
 
               {/* Bottom Container: Overall Food & Service / Hygiene Categories */}
-              <div className="bg-[#523d2d] rounded-[24px] p-3.5 text-[#faefcb] shadow-md border border-[#3e2c1e] space-y-2.5">
+              <div className="bg-[#523d2d] rounded-[24px] p-3 text-[#faefcb] shadow-md border border-[#3e2c1e] space-y-2">
                 {/* Food / Mess Food Category Row */}
-                <div className="flex items-center justify-between gap-1.5">
-                  <div className="flex items-center space-x-1.5 min-w-[85px]">
-                    <span className="font-retro text-[12px] sm:text-[13px] tracking-wide uppercase">
+                <div className="flex items-center justify-between gap-1">
+                  <div className="flex items-center space-x-1 flex-1 min-w-0 pr-1">
+                    <span className="font-retro text-[11px] sm:text-[12px] tracking-wide uppercase truncate">
                       {venueMode === 'mess'
                         ? 'MESS FOOD'
                         : venueMode === 'universal'
                         ? 'FOOD'
                         : 'FOOD'}
                     </span>
-                    <CutleryDoodle className="w-4 h-4 text-amber-200" />
+                    <CutleryDoodle className="w-3.5 h-3.5 text-amber-200 shrink-0" />
                   </div>
-                  <div className="flex-1 max-w-[125px]">
+                  <div className="w-18 xs:w-22 sm:w-26 shrink-0">
                     <input
                       type="text"
-                      placeholder={venueMode === 'mess' ? 'TASTE & SOFTNESS' : 'FEEDBACK'}
+                      placeholder="NOTE"
                       value={foodFeedback}
                       onChange={(e) => setFoodFeedback(e.target.value)}
-                      className="w-full bg-white text-[#3d2a1b] font-retro text-[11px] placeholder:text-[#523d2d]/60 px-2.5 py-1 rounded-full text-center border-none shadow-xs focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all hover:scale-105 active:scale-95"
+                      className="w-full bg-white text-[#3d2a1b] font-retro text-[9.5px] sm:text-[11px] placeholder:text-[#523d2d]/60 px-1.5 py-0.5 sm:py-1 rounded-full text-center border-none shadow-xs focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
                     />
                   </div>
-                  <div className="shrink-0">
+                  <div className="shrink-0 pl-0.5">
                     <StarIconDoodle
                       filled={foodRating >= 4}
                       onClick={() => setFoodRating(foodRating === 5 ? 3 : 5)}
@@ -433,23 +433,23 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
                 </div>
 
                 {/* Service / Mess Hygiene Category Row */}
-                <div className="flex items-center justify-between gap-1.5">
-                  <div className="flex items-center space-x-1.5 min-w-[85px]">
-                    <span className="font-retro text-[12px] sm:text-[13px] tracking-wide uppercase">
+                <div className="flex items-center justify-between gap-1">
+                  <div className="flex items-center space-x-1 flex-1 min-w-0 pr-1">
+                    <span className="font-retro text-[11px] sm:text-[12px] tracking-wide uppercase truncate">
                       {venueMode === 'mess' ? 'HYGIENE' : 'SERVICE'}
                     </span>
-                    <ClocheDoodle className="w-4 h-4 text-amber-200" />
+                    <ClocheDoodle className="w-3.5 h-3.5 text-amber-200 shrink-0" />
                   </div>
-                  <div className="flex-1 max-w-[125px]">
+                  <div className="w-18 xs:w-22 sm:w-26 shrink-0">
                     <input
                       type="text"
-                      placeholder={venueMode === 'mess' ? 'CLEANLINESS' : ''}
+                      placeholder="NOTE"
                       value={serviceFeedback}
                       onChange={(e) => setServiceFeedback(e.target.value)}
-                      className="w-full bg-white text-[#3d2a1b] font-retro text-[11px] placeholder:text-[#523d2d]/60 px-2.5 py-1 rounded-full text-center border-none shadow-xs focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all hover:scale-105 active:scale-95"
+                      className="w-full bg-white text-[#3d2a1b] font-retro text-[9.5px] sm:text-[11px] placeholder:text-[#523d2d]/60 px-1.5 py-0.5 sm:py-1 rounded-full text-center border-none shadow-xs focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
                     />
                   </div>
-                  <div className="shrink-0">
+                  <div className="shrink-0 pl-0.5">
                     <StarIconDoodle
                       filled={serviceRating >= 4}
                       onClick={() => setServiceRating(serviceRating === 5 ? 3 : 5)}
@@ -458,32 +458,30 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
                 </div>
 
                 {/* Any Other Queries / Mess Suggestions Wide Pill */}
-                <div className="pt-1">
+                <div className="pt-0.5">
                   <input
                     type="text"
                     placeholder={
                       venueMode === 'mess'
-                        ? 'ANY MESS SUGGESTIONS / TIMINGS'
-                        : venueMode === 'universal'
-                        ? 'ANY OTHER QUERIES / TABLE REQUESTS'
-                        : 'ANY OTHER QUERIES'
+                        ? 'MESS SUGGESTIONS / QUERIES'
+                        : 'SPECIAL REQUESTS / QUERIES'
                     }
                     value={otherQueries}
                     onChange={(e) => setOtherQueries(e.target.value)}
-                    className="w-full bg-white text-[#3d2a1b] font-retro text-[11px] sm:text-[12px] placeholder:text-[#523d2d]/65 tracking-wider px-4 py-1.5 rounded-full text-center uppercase border-none shadow-xs focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all hover:scale-[1.02] active:scale-98"
+                    className="w-full bg-white text-[#3d2a1b] font-retro text-[9.5px] sm:text-[11px] placeholder:text-[#523d2d]/65 tracking-wide px-3 py-1.5 rounded-full text-center uppercase border-none shadow-xs focus:ring-1 focus:ring-amber-400 focus:outline-none transition-all"
                   />
                 </div>
               </div>
 
               {/* Interactive Screen 1 -> Screen 2 Navigation Pill */}
-              <div className="pt-1">
+              <div className="pt-1 pb-6 sm:pb-4">
                 <button
                   type="button"
                   onClick={() => setCurrentScreen('feedback')}
-                  className="w-full py-2.5 bg-[#e5aa24] hover:bg-[#d89b1c] active:scale-95 text-[#2c1d11] font-retro text-sm uppercase tracking-wider rounded-2xl shadow-md border-2 border-[#b87c0e] transition-all flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full py-2.5 pr-6 sm:pr-8 pl-3 bg-[#e5aa24] hover:bg-[#d89b1c] active:scale-95 text-[#2c1d11] font-retro text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-md border-2 border-[#b87c0e] transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
                 >
                   <span>CONTINUE TO FEEDBACK & RATINGS</span>
-                  <span className="text-base">→</span>
+                  <span className="text-sm">→</span>
                 </button>
               </div>
             </div>
@@ -636,8 +634,8 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
               </div>
 
               {/* Bottom Thank You Banner (Image 2) & Submit Button */}
-              <div className="text-center pt-2 space-y-3">
-                <h4 className="font-retro text-[#4d3728] text-base sm:text-lg tracking-wider leading-snug uppercase drop-shadow-xs">
+              <div className="text-center pt-1 pb-6 sm:pb-4 space-y-2.5">
+                <h4 className="font-retro text-[#4d3728] text-sm sm:text-base tracking-wider leading-snug uppercase drop-shadow-xs">
                   THANK YOU FOR YOUR
                   <br />
                   VALUABLE TIME !
@@ -647,7 +645,7 @@ export const RetroFoodTheme: React.FC<RetroFoodThemeProps> = ({
                   type="button"
                   disabled={isSubmitting}
                   onClick={handleFinalSubmit}
-                  className="w-full py-3 bg-[#523d2d] hover:bg-[#433022] active:scale-95 text-[#fbf1cd] font-retro text-sm uppercase tracking-widest rounded-2xl shadow-lg border-2 border-[#3d2a1b] transition-all flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-2.5 sm:py-3 pr-6 sm:pr-8 pl-3 bg-[#523d2d] hover:bg-[#433022] active:scale-95 text-[#fbf1cd] font-retro text-xs sm:text-sm uppercase tracking-widest rounded-2xl shadow-lg border-2 border-[#3d2a1b] transition-all flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
                 >
                   <span>
                     {isSubmitting

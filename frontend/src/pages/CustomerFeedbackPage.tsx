@@ -377,7 +377,7 @@ export const CustomerFeedbackPage: React.FC = () => {
           </Link>
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-2 sm:p-4">
+        <div className="flex-1 flex items-center justify-center p-1 sm:p-4 pb-32 sm:pb-12">
           <RetroFoodTheme
             restaurantName={branchName}
             orderNumber={order?.order_number || 'RR-8842'}
