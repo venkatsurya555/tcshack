@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { api } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { AnalyticsReport } from '../types';
@@ -68,6 +68,37 @@ export const Overview: React.FC = () => {
 
   return (
     <div className="space-y-6">
+      {/* Quick Access Hero Card for Evaluators & Diners */}
+      <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-3 border border-amber-500/50">
+        <div className="flex items-center space-x-3.5">
+          <div className="w-11 h-11 rounded-xl bg-amber-500/30 flex items-center justify-center text-2xl shrink-0 border border-amber-300/40">
+            🍔
+          </div>
+          <div>
+            <div className="flex items-center space-x-2">
+              <h3 className="font-bold text-sm tracking-wide">
+                Interactive Food & Mess Review Portal
+              </h3>
+              <span className="bg-white/20 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                Revolving Emojis Active
+              </span>
+            </div>
+            <p className="text-xs text-amber-100/90 mt-0.5">
+              Experience the animated burger review card, orbital emoji animations, and tomato sauce rating slider.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-2 shrink-0">
+          <Link
+            to="/theme-preview"
+            className="px-4 py-2 bg-white text-amber-950 font-bold rounded-xl text-xs hover:bg-amber-50 transition-all shadow-sm hover:scale-105 active:scale-95 flex items-center space-x-1.5"
+          >
+            <span>Open Customer Review Theme</span>
+            <span className="text-sm">→</span>
+          </Link>
+        </div>
+      </div>
+
       {/* Page Header with Food Icon, Warm Hospitality Badge, & Filters */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center space-x-3.5">

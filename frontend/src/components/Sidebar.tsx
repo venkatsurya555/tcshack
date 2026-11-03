@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import {
   LayoutDashboard,
   MessageSquareQuote,
@@ -117,10 +117,8 @@ export const Sidebar: React.FC = () => {
           </span>
         </NavLink>
 
-        <a
-          href="/feedback/demo"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/feedback/demo"
           className="group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-emerald-400 hover:text-emerald-300 bg-[#162518]/60 hover:bg-[#1c301f] border border-emerald-800/40 transition-all duration-200 hover:scale-[1.01]"
         >
           <div className="flex items-center space-x-2.5">
@@ -128,12 +126,10 @@ export const Sidebar: React.FC = () => {
             <span>Live Customer QR</span>
           </div>
           <ExternalLink className="w-3 h-3 shrink-0 opacity-70 group-hover:opacity-100" />
-        </a>
+        </Link>
 
-        <a
-          href="/track/TKT-2026-001"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/track/TKT-2026-001"
           className="group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-amber-200 hover:text-white hover:bg-[#2c1c13] border border-[#3d2719] transition-all duration-200 hover:scale-[1.01]"
         >
           <div className="flex items-center space-x-2.5">
@@ -141,7 +137,7 @@ export const Sidebar: React.FC = () => {
             <span>Ticket Resolution Track</span>
           </div>
           <ExternalLink className="w-3 h-3 shrink-0 opacity-70 group-hover:opacity-100" />
-        </a>
+        </Link>
       </nav>
 
       {/* Demo Notice Footer with Warm Ambient Status */}
