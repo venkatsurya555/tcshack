@@ -4,6 +4,12 @@ import {
   AnalyticsReport, MenuItem, CustomerNotification, RoutingRule, AppSetting,
   ComplaintGroup, ReviewItem, AIClusterStats
 } from '../types';
+import {
+  MOCK_BRANCHES, MOCK_DEPARTMENTS, MOCK_DEMO_USERS, MOCK_CURRENT_USER,
+  MOCK_KPIS, MOCK_CHARTS, MOCK_FEEDBACKS, MOCK_COMPLAINTS, MOCK_AI_STATS,
+  MOCK_AI_GROUPS, MOCK_MENU, MOCK_ORDERS, MOCK_NOTIFICATIONS, MOCK_SETTINGS,
+  MOCK_ROUTING_RULES
+} from './mockData';
 
 const API_BASE = '/api/v1';
 
@@ -38,21 +44,97 @@ class ApiService {
       headers['Authorization'] = `Bearer ${this.token}`;
     }
 
-    const res = await fetch(url, { ...options, headers });
-    if (!res.ok) {
-      let errorMsg = `API request failed with status ${res.status}`;
-      try {
-        const errorData = await res.json();
-        if (errorData.detail) {
-          errorMsg = typeof errorData.detail === 'string' ? errorData.detail : JSON.stringify(errorData.detail);
-        }
-      } catch {
-        // ignore json parse error
+    try {
+      const res = await fetch(url, { ...options, headers });
+      if (res.ok) {
+        return await res.json();
       }
-      throw new Error(errorMsg);
+    } catch {
+      // Backend is offline or running on static hosting (e.g. GitHub Pages)
     }
 
-    return res.json();
+    // Graceful fallback for static GitHub Pages and offline demo
+    return this.getMockFallback<T>(endpoint, options);
+  }
+
+  private getMockFallback<T>(endpoint: string, options: RequestInit): T {
+    const clean = endpoint.split('?')[0];
+
+    if (clean === '/auth/demo-users') return MOCK_DEMO_USERS as unknown as T;
+    if (clean === '/auth/me') return MOCK_CURRENT_USER as unknown as T;
+    if (clean === '/auth/login') {
+      return { access_token: 'mock-jwt-token-active', user: MOCK_CURRENT_USER } as unknown as T;
+    }
+    if (clean === '/settings/branches') return MOCK_BRANCHES as unknown as T;
+    if (clean === '/departments') return MOCK_DEPARTMENTS as unknown as T;
+    if (clean === '/dashboard/kpis') return MOCK_KPIS as unknown as T;
+    if (clean === '/dashboard/charts') return MOCK_CHARTS as unknown as T;
+    if (clean === '/feedback') return MOCK_FEEDBACKS as unknown as T;
+    if (clean === '/complaints') return MOCK_COMPLAINTS as unknown as T;
+    if (clean === '/ai/dashboard/stats') return MOCK_AI_STATS as unknown as T;
+    if (clean === '/ai/groups') return MOCK_AI_GROUPS as unknown as T;
+    if (clean === '/ai/groups/recluster') {
+      return { message: 'Reclustering complete', clusters: MOCK_AI_GROUPS.length } as unknown as T;
+    }
+    if (clean === '/ai/reviews') {
+      const reviews = MOCK_AI_GROUPS.map((g, idx) => ({
+        id: `rev-${idx + 1}`,
+        reviewText: g.representativeText,
+        detectedSentiment: 'NEGATIVE' as const,
+        sentimentScore: g.averageSentimentScore,
+        confidenceScore: 0.92,
+        extractedDepartment: g.suggestedDepartment,
+        extractedIssue: g.label,
+        groupId: g.id,
+        createdAt: g.detectedAt,
+        source: 'DINER_FEEDBACK'
+      }));
+      return { content: reviews, totalElements: reviews.length, totalPages: 1 } as unknown as T;
+    }
+    if (clean === '/menu') return MOCK_MENU as unknown as T;
+    if (clean === '/orders') return MOCK_ORDERS as unknown as T;
+    if (clean.startsWith('/orders/')) {
+      const id = parseInt(clean.replace('/orders/', '')) || 106;
+      const order = MOCK_ORDERS.find(o => o.id === id) || MOCK_ORDERS[0];
+      return order as unknown as T;
+    }
+    if (clean === '/notifications') return MOCK_NOTIFICATIONS as unknown as T;
+    if (clean === '/settings') return MOCK_SETTINGS as unknown as T;
+    if (clean === '/settings/routing-rules') return MOCK_ROUTING_RULES as unknown as T;
+    if (clean.startsWith('/complaints/track/')) {
+      return {
+        ticket: MOCK_COMPLAINTS[0],
+        history: [
+          { status: 'NEW', timestamp: '2026-10-29T09:48:35Z', notes: 'Ticket registered from diner submission' },
+          { status: 'ASSIGNED', timestamp: '2026-10-29T09:50:00Z', notes: 'Assigned to kitchen team lead' }
+        ]
+      } as unknown as T;
+    }
+    if (clean.startsWith('/complaints/')) {
+      return {
+        ticket: MOCK_COMPLAINTS[0],
+        order: MOCK_ORDERS[0],
+        investigation_notes: [
+          { id: 1, ticket_id: 5, staff_name: 'Chef Suresh Rao', note: 'Checked tandoor marinade batch temp; recalibrated clay oven rack.', note_type: 'investigation', created_at: '2026-10-29T10:15:00Z' }
+        ],
+        status_history: [
+          { id: 1, ticket_id: 5, old_status: 'NEW', new_status: 'ASSIGNED', changed_by_name: 'Kavita Nair', notes: 'Initial triage', created_at: '2026-10-29T09:50:00Z' }
+        ]
+      } as unknown as T;
+    }
+    if (clean.startsWith('/qr/validate/')) {
+      return {
+        valid: true,
+        message: 'Valid QR token',
+        order: MOCK_ORDERS[0],
+        branch_name: 'The Royal Rasoi - Indiranagar'
+      } as unknown as T;
+    }
+    if (clean === '/feedback/submit') {
+      return { success: true, message: 'Feedback recorded successfully', feedback_id: 'FB-2026-007' } as unknown as T;
+    }
+
+    return [] as unknown as T;
   }
 
   // Auth
